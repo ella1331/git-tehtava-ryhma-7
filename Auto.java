@@ -1,9 +1,46 @@
 //Projektityö Riku & Timo & Elina
 //Tee autoluokka
-public class Auto {
+  public class Auto {
+	
+
+	public static void main(String[] args) {
+		
+        // luodaan auto1-olio
+        Auto auto1 = new Auto();
+        auto1.merkki = "Toyota";
+        auto1.malli = "Corolla";
+        auto1.bensanMaara = 20;
+
+        auto1.naytaTiedot(); // Tulostaa alkuperäiset tiedot
+        auto1.kiihdyta();    // Tulostaa "Auto kiihtyy"
+        auto1.naytaTiedot(); // Tulostaa päivitetyt tiedot
+
+        // lisätään kiihdyta-metodiin bensan määrä
+        auto1.bensanMaara = 0;
+        auto1.kiihdyta(); // Tulostaa "Auto ei voi kiihtyä, koska bensaa on loppu!"
+
+        // Lisätään tankkaa metodi
+        auto1.tankkaa(5);
+
+        // Luodaan auto2 olio, jolla kolme 3 parametriä
+        Auto auto2 = new Auto("Ford", "Focus", 15);
+        auto2.naytaTiedot(); // Tulostaa tiedot, jotka asetettiin muodostimessa
+        
+        // Luodaan auto3 olio
+        Auto auto3 = new Auto();
+        auto3.merkki = "Volvo";
+        auto3.malli = "V70";
+        auto3.bensanMaara = 50;
+        auto3.lampotila = 4;
+        auto3.naytaTiedot();
+        auto3.lisalammitin();
+        
+    } // Main-luokan lopetus
+
     public String merkki;
     public String malli;
     public int bensanMaara;
+    public int lampotila;
 
     //Oletusmuodostin
     public Auto() {
@@ -15,6 +52,7 @@ public class Auto {
         this.malli = malli;
         this.bensanMaara = bensanMaara;
     }
+    
 // Määritellään metodit
     public void jarruta() {
         System.out.println("Auto jarruttaa");
@@ -41,28 +79,14 @@ public class Auto {
         bensanMaara += maara;
         System.out.println("Tankissa bensaa tankkauksen jälkeen: " + bensanMaara);
     }
-
-    public static void main(String[] args) {
-        // luodaan auto1-olio
-        Auto auto1 = new Auto();
-        auto1.merkki = "Toyota";
-        auto1.malli = "Corolla";
-        auto1.bensanMaara = 20;
-
-        auto1.naytaTiedot(); // Tulostaa alkuperäiset tiedot
-        auto1.kiihdyta();    // Tulostaa "Auto kiihtyy"
-        auto1.naytaTiedot(); // Tulostaa päivitetyt tiedot
-
-        // lisätään kiihdyta-metodiin bensan määrä
-        auto1.bensanMaara = 0;
-        auto1.kiihdyta(); // Tulostaa "Auto ei voi kiihtyä, koska bensaa on loppu!"
-
-        // Lisätään tankkaa metodi
-        auto1.tankkaa(5);
-
-        // Tehdään muodostin, jolla kolme 3 parametriä
-        Auto auto2 = new Auto("Ford", "Focus", 15);
-        auto2.naytaTiedot(); // Tulostaa tiedot, jotka asetettiin muodostimessa
+    
+    public void lisalammitin () {
+    	if (lampotila < 5) {
+    		System.out.println("Lämpötila alle 5 astetta, Lisälämmitin kytketty päälle");
+    	} else {
+    		System.out.println("Lämpötila yli 5 astetta, Lisälämmitin ei kytketty");
+    	}
+    	
     }
 }
 
