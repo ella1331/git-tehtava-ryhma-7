@@ -41,6 +41,13 @@ public class Auto {
         bensanMaara += maara;
         System.out.println("Tankissa bensaa tankkauksen jälkeen: " + bensanMaara);
     }
+    
+    public void lisalammitin () {
+    	if (lampotila < 5) {
+    		System.out.println("Lämpötila alle 5 astetta, Lisälämmitin kytketty päälle");
+    	} else {
+    		System.out.println("Lämpötila yli 5 astetta, Lisälämmitin ei kytketty");
+    }
 
     public static void main(String[] args) {
         // luodaan auto1-olio
@@ -71,7 +78,7 @@ public class Auto {
         auto3.bensanMaara = 50;
         auto3.lampotila = 4;
         auto3.naytaTiedot();
-        
+        auto3.lisalammitin();
     }
 }
 
