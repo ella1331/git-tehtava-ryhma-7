@@ -63,6 +63,15 @@ public class Auto {
         // Tehdään muodostin, jolla kolme 3 parametriä
         Auto auto2 = new Auto("Ford", "Focus", 15);
         auto2.naytaTiedot(); // Tulostaa tiedot, jotka asetettiin muodostimessa
+
+        // Luodaan auto3 olio
+        Auto auto3 = new Auto();
+        auto3.merkki = "Volvo";
+        auto3.malli = "V70";
+        auto3.bensanMaara = 50;
+        auto3.lampotila = 4;
+        auto3.naytaTiedot();
+        
     }
 }
 
