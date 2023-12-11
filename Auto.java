@@ -35,6 +35,11 @@
         auto3.naytaTiedot();
         auto3.lisalammitin();
         
+        //Luodaan auto4 olio
+        Auto auto4 = new Auto("Audi", "A6", 10);
+        auto4.naytaTiedot();
+        auto4.tarkistaBensanMaara(); // Uusi metodi, joka tarkistaa polttoaineen määrän.
+        
     } // Main-luokan lopetus
 
     public String merkki;
@@ -87,6 +92,14 @@
     		System.out.println("Lämpötila yli 5 astetta, Lisälämmitin ei kytketty");
     	}
     	
+    }
+    public void tarkistaBensanMaara()
+    {
+    	if (bensanMaara < 7){
+    		System.out.println("Varoitus: Bensaa vähän jäljellä!");
+    	} else {
+    		System.out.println("Bensaa on vielä riittävästi.");
+    	}
     }
 }
 
